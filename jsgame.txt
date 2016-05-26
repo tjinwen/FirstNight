@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>踩地雷</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $('.button').on('click', function(){
+    	var value = +$(this).closest(".num").find(".val").val();
+    	for(var i=0;i<value;i++){
+    		$(this).closest(".body").find(".game").append("<tr class='addtr'></tr>");
+    		for(var j=0;j<value;j++){
+    			$(this).closest(".game").find(".addtr").append("<td></td>");
+    		}
+    	}
+    });  
+});
+</script>
+<style type="text/css">
+.game{
+	width:80px;
+	height:80px;
+}
+.addtr td{
+	
+	border: 1px solid red;
+	width:80px;
+	height:80px;
+}
+</style>
+</head>
+<body class="body">
+<h2 align="center">踩地雷</h2>
+<table align="center" class="num">
+	<tr>
+		<td colspan="2" >地雷数量:</td>
+	</tr>
+	<tr>
+		<td> <input class="val" type="text"></td>
+		<td> <input class="button" type="button" value="确定"> </td>
+	</tr>
+</table>
+<table border="1" align="center" class="game" >
+	
+</table>
+</body>
+</html>
